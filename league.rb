@@ -3,6 +3,7 @@ File.write('Gemfile', <<-GEMFILE)
   source 'https://rubygems.org'
 
   gem 'activesupport'
+  gem 'activemodel'
   gem 'minitest-reporters'
 GEMFILE
 
@@ -18,6 +19,7 @@ Minitest::Reporters.use!
 require 'logger'
 
 require 'active_support/all'
+require 'active_model'
 
 %w(
   models/*.rb

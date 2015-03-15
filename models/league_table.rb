@@ -1,4 +1,6 @@
 class LeagueTable
+  include ActiveModel::Model
+
   attr_accessor :matches
 
   def matches

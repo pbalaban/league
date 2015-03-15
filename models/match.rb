@@ -2,6 +2,8 @@ class Match
   RESULT_REGEXP = /(.+)\s+(\d+)\s+-\s+(\d+)\s+(.+)/
   DEFAULT_ATTRS = %i(home_team home_team_goals away_team_goals away_team)
 
+  include ActiveModel::Model
+
   attr_accessor *DEFAULT_ATTRS
 
   def self.parse formatted_str
