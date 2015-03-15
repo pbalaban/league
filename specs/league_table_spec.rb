@@ -1,4 +1,6 @@
 describe LeagueTable do
+  include LeagueTableHelper
+
   let(:empty_league){ LeagueTable.new }
   let(:simple_league){ LeagueTable.new.tap{ |lt| lt.matches.push('Man Utd 3 - 0 Liverpool') } }
   let(:complicated_league) do
@@ -26,14 +28,6 @@ describe LeagueTable do
       it{ all_league_with_all_teams{ |l, t| l.get_wins(t).must_equal 0 } }
       it{ all_league_with_all_teams{ |l, t| l.get_draws(t).must_equal 0 } }
       it{ all_league_with_all_teams{ |l, t| l.get_losses(t).must_equal 0 } }
-    end
-  end
-
-  def all_league_with_all_teams
-    league_examples.each do |league|
-      team_name_examples.each do |team_name|
-        yield league, team_name
-      end
     end
   end
 end

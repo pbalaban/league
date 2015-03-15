@@ -14,6 +14,7 @@ require 'logger'
 
 %w(
   models/*.rb
+  specs/support/*.rb
   specs/*.rb
 ).each do |path|
   location = File.expand_path(path, __dir__)

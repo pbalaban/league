@@ -1,4 +1,6 @@
 describe Match do
+  include MatchHelper
+
   let(:team_with_digits){ 'Schalke 04 0 - 1 Liverpool' }
   let(:goal_with_many_digits){ 'Liverpool 123 - 11 Man Utd' }
 
@@ -23,9 +25,5 @@ describe Match do
   it '#parse' do
     attributes_for_compare(Match.parse(team_with_digits)).must_equal ['Schalke 04', 0, 1, 'Liverpool']
     attributes_for_compare(Match.parse(goal_with_many_digits)).must_equal ['Liverpool', 123, 11, 'Man Utd']
-  end
-
-  def attributes_for_compare match
-    %i(home_team home_team_goals away_team_goals away_team).map{ |attr| match.send(attr) }
   end
 end
