@@ -1,0 +1,2 @@
+describe LeagueTable do
+end
