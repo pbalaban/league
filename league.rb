@@ -3,6 +3,7 @@ File.write('Gemfile', <<-GEMFILE)
   source 'https://rubygems.org'
 
   gem 'activesupport'
+  gem 'minitest-reporters'
 GEMFILE
 
 system 'bundle install'
@@ -11,6 +12,9 @@ require 'bundler'
 Bundler.setup(:default)
 
 require 'minitest/autorun'
+require "minitest/reporters"
+Minitest::Reporters.use!
+
 require 'logger'
 
 require 'active_support/all'
