@@ -2,6 +2,7 @@ system 'rm Gemfile' if File.exist?('Gemfile')
 File.write('Gemfile', <<-GEMFILE)
   source 'https://rubygems.org'
 
+  gem 'activesupport'
 GEMFILE
 
 system 'bundle install'
@@ -11,6 +12,8 @@ Bundler.setup(:default)
 
 require 'minitest/autorun'
 require 'logger'
+
+require 'active_support/all'
 
 %w(
   models/*.rb
