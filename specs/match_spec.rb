@@ -10,23 +10,7 @@ describe Match do
   end
 
   it "DEFAULT_ATTRS ordered" do
-    Match::DEFAULT_ATTRS.must_equal %i(home_team home_team_goals away_team_goals away_team)
-  end
-
-  describe 'instance methods' do
-    subject{ Match.new }
-
-    it{ subject.must_respond_to :home_team }
-    it{ subject.home_team.must_be_instance_of String }
-
-    it{ subject.must_respond_to :home_team_goals }
-    it{ subject.home_team_goals.must_be_instance_of Fixnum }
-
-    it{ subject.must_respond_to :away_team_goals }
-    it{ subject.away_team_goals.must_be_instance_of Fixnum }
-
-    it{ subject.must_respond_to :away_team }
-    it{ subject.away_team.must_be_instance_of String }
+    Match::DEFAULT_ATTRS.must_equal %i(home_team_name home_team_goals away_team_goals away_team_name)
   end
 
   describe "class methods" do
