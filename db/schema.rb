@@ -14,4 +14,16 @@ ActiveRecord::Schema.define do
     t.string  :home_team_name, null: false
     t.string  :away_team_name, null: false
   end
+
+  create_table :games, force: true  do |t|
+    t.integer :match_id
+    t.integer :team_id
+    t.integer :points, default: 0
+    t.integer :goal_scored, default: 0
+    t.integer :goal_conceded, default: 0
+    t.string  :result
+  end
+
+  add_index :games, :match_id
+  add_index :games, :team_id
 end

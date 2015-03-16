@@ -1,0 +1,9 @@
+# adapter: sqlite3
+# database: ':memory:'
+
+adapter: postgresql
+encoding: unicode
+database: league_test
+pool: 5
+username: user
+password: pass

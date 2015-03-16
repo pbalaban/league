@@ -4,18 +4,16 @@ File.write('Gemfile', <<-GEMFILE)
 
   gem 'activerecord'
   gem 'sqlite3'
+  gem 'pg'
 
   gem 'minitest-reporters'
+  gem 'database_cleaner'
 GEMFILE
 
 system 'bundle install'
 
 require 'bundler'
 Bundler.setup(:default)
-
-require 'minitest/autorun'
-require "minitest/reporters"
-Minitest::Reporters.use!
 
 require 'logger'
 
