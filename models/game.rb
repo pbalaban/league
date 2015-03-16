@@ -8,7 +8,7 @@ class Game < ActiveRecord::Base
 
   def team_name= name
     @team_name = name
-    @team = Team.where(name: name).first_or_create
+    self.team = Team.where(name: name).first_or_create
   end
 
   def goal_difference
